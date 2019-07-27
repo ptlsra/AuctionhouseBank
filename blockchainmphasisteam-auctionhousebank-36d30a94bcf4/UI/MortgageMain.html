@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage And Refinance </title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Mortgage.css">
+   
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body id="main_body">
+    <nav class="navbar navbar-default" id="nav_bar" style="background:#120d7c;">
+        <div class="container-fluid">
+            <div class="navbar-header" ><a class="navbar-brand navbar-link" href="#"><span id="bankName">Bank</span></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                
+                    <li role="presentation" id="a"><a href="#" >About Us </a></li>
+                    <li role="presentation" id="b"><a href="#" >Customer Service</a></li>
+                    <li role="presentation" id="c"><a href="#">Locations</a></li>
+                    
+                    <li role="presentation" id="d"><a href="#"><i class="fa fa-lock" id="tx_icon" style="margin-right:8px;"></i>Login</a></li>
+                    
+                  
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+   
+     <div class="container-fluid"  style="margin-top:10px;margin-left:25px;color:#120d7c;">
+     <h2 style="text-align:center;font-weight:bolder;">Welcome to Customer Portal</h2>
+     </div>
+    <div class="container-fluid" id="main_container" style="margin-top:15px;">
+        <div class="row">
+        
+        
+            
+  <img  src="assets/img/bank2.jpg"   width="1200" height="300"> 
+                
+                </div>
+            
+           
+            
+    </div>
+    <!--  
+    Second Section -->
+    
+    
+    <div class="container-fluid" id="main_container" style="margin-top:15px;">
+     <h1 style="color:black;">Welcome to the new world of Banking.</h1>
+        <div class="row">
+        <div class="col-lg-6 col-md-12" id="apply_loan_column" >
+            <h2 style="color:#120d7c;margin-top:60px;">What would you like today? </h2>
+                
+       <p style="color:black;margin-top:50px;font-family: Arial, Helvetica, sans-serif;font-size:18px;">Bank Solutions Made Simpler and Secure.Expirience hassle free banking at it's Best.Get Started by Clicking Below. </p>
+            <br>
+                <button class="button " id="prequalify">Get Started</button>
+                </div>
+                
+                
+                <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="fa fa-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" action="LoginServlet">
+            <div class="form-group">
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="psw" name="password" placeholder="Enter password">
+            </div>
+            
+              <button style="background-color: #E91E63" type="submit" class="btn btn-success btn-block"><span class="fa fa-power-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button style="background:#E91E63;" type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="fa fa-wondow-close"></span> Cancel</button>
+          <p style="color:black;">Not a member? <a href="#" style="color:blue;">Sign Up</a></p>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+                
+                <div class="col-lg-6 col-md-12" id="apply_loan_column" >
+                
+<img  src="assets/img/2.jpg"   height="300" width="585" style="margin-top:60px;">                 
+        
+            
+                
+                </div>
+            
+           
+</div>            
+    </div>
+    
+    
+    
+    <!--  
+    <footer id="main_footer">
+        <p>© 2017 Mphasis Unleash the Next. All rights reserved &nbsp; &nbsp; &nbsp;&nbsp; </p>
+    </footer>
+    -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+  <script>
+$(document).ready(function(){
+	
+
+
+$("#prequalify").click(function(){
+    $("#myModal").modal();
+});
+
+
+
+
+});
+
+
+
+
+        
+
+
+</script>
+
+
+
+
+</html>

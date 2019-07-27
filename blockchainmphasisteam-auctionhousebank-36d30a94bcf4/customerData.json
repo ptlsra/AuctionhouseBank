@@ -1,0 +1,92 @@
+[
+    {
+        "firstName":"Jhon",
+        "lastName":"Wick",
+        "emailAddress":"johnwick@gmail.com",
+        "dob":"21/03/1992",
+        "city":"London",
+        "country":"United Kingdom",
+        "accountBalance":40000
+    },
+    {
+        "firstName":"Alice",
+        "lastName":"Smith",
+        "emailAddress":"alicesmith@gmail.com",
+        "dob":"22/03/1991",
+        "city":"Paris",
+        "country":"France",
+        "accountBalance":75000
+    },
+    {
+        "firstName":"Jason",
+        "lastName":"Momao",
+        "emailAddress":"jasonmomao@gmail.com",
+        "dob":"23/05/1994",
+        "city":"Boston",
+        "country":"United States",
+        "accountBalance":80000
+    },
+    {
+        "firstName":"Tony",
+        "lastName":"Stark",
+        "emailAddress":"tonystark@gmail.com",
+        "dob":"21/04/1984",
+        "city":"London",
+        "country":"United Kingdom",
+        "accountBalance":35000
+    },
+    {
+        "firstName":"Bruce",
+        "lastName":"Wayne",
+        "emailAddress":"brucewayne@gmail.com",
+        "dob":"21/03/1984",
+        "city":"Vienna",
+        "country":"Austria",
+        "accountBalance":31000
+    },
+    {
+        "firstName":"Kate",
+        "lastName":"Williams",
+        "emailAddress":"katewilliams@gmail.com",
+        "dob":"24/02/1992",
+        "city":"Seoul",
+        "country":"South Korea",
+        "accountBalance":68000
+    },
+    {
+        "firstName":"Jhon",
+        "lastName":"Adams",
+        "emailAddress":"jhonadams@gmail.com",
+        "dob":"25/01/1991",
+        "city":"London",
+        "country":"United Kingdom",
+        "accountBalance":69000
+    },
+    {
+        "firstName":"Adam",
+        "lastName":"Smith",
+        "emailAddress":"adamsmith@gmail.com",
+        "dob":"26/05/1990",
+        "city":"Vienna",
+        "country":"Austria",
+        "accountBalance":80000
+    },
+    {
+        "firstName":"Jason",
+        "lastName":"Jacob",
+        "emailAddress":"jasonjacob@gmail.com",
+        "dob":"28/09/1996",
+        "city":"Boston",
+        "country":"United States",
+        "accountBalance":81000
+    },
+    {
+        "firstName":"Vlad",
+        "lastName":"Smith",
+        "emailAddress":"vladsmith@gmail.com",
+        "dob":"24/02/1987",
+        "city":"Paris",
+        "country":"France",
+        "accountBalance":66000
+    }
+]

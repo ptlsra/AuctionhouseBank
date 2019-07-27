@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin -Bank </title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/MainLogin.css">
+    
+  
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+   
+</head>
+
+<body id="main_body">
+
+ <div id="headerDiv"></div>
+  
+    <div class="imagebanner">
+  <img src="assets/img/lpv.jpg" alt="Notebook" style="width:100%;">
+  <div class="content">
+    <h1 id="custInfo">Welcome To Bank.</h1>
+    <p>Banking Solutions implemented on blockchain.</p>
+  </div>
+</div>
+   
+ 
+   
+     <div class="container-fluid" id="main_container" >
+        <div class="row">
+        
+        
+            
+   <div class="col-lg-4 col-md-12" id="apply_loan_column" style="margin-top:40px;">
+        <img src="assets/img/customer.jpg" class="img-circle" alt="Cinque Terre" width="100" height="86"> 
+            <h4 style="color:#120d7c;margin-top:30px;font-weight: bold;">Customers </h4>
+            
+            <p style="color:black;font-size:14px;">View all Customers</p>
+                   <br>
+                   <button class="button " id="quotes">View Customers</button>
+            
+         
+              
+                </div>
+            
+             <div class="col-lg-4 col-md-12" id="apply_loan_column" style="margin-top:40px;">
+        <img src="assets/img/typing.jpg" class="img-circle" alt="Cinque Terre" width="100" height="86"> 
+            <h4 style="color:#120d7c;margin-top:30px;font-weight: bold;">Generate Proof </h4>
+            
+            <p style="color:black;font-size:14px;">Click Here to Generate Proof.</p>
+            <p style="color:black;font-size:14px;" id="lastGeneratedAt">Last Generated At .</p>
+                
+                   <button class="button " id="calc">Generate Proof</button>
+            
+                
+      
+              
+              
+                </div>
+            
+            
+                
+                 <div class="col-lg-4 col-md-12" id="apply_loan_column3" style="margin-top:40px;">
+        <img src="assets/img/tx.jpg" class="img-circle" alt="Cinque Terre" width="100" height="86"> 
+            <h4 style="color:#120d7c;margin-top:30px;font-weight: bold;">View Transactions </h4>
+            
+            <p style="color:black;font-size:14px;">View All Transactions .</p>
+                   <br>
+                   <button class="button " id="calc3">View List</button>
+            </div>
+           
+               
+    </div>
+    </div>
+
+
+
+<div class="modal fade" id="generateProofModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-color:white;">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" style="color:black;">Generate Proof.</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <div class="form-group" style="color:black;">
+            <p id="proofValiditydata" style="font-weight:bold;"></p>
+            <br>
+            <p>By Clicking on the below button you will generate proof for all customers.</p>
+            <br>
+            <input type="button" value="Click here to generate proof" class="loginbutton" id="generateProof">
+          </div>
+
+        </form>
+        <br>
+
+
+
+
+      </div>
+
+      <!-- Modal footer -->
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="txModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background:white;color: black;">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" style="color:black;">Transaction Status</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p id="txData" style="color:black;"></p>
+          <br>
+  
+        
+  
+         
+        </div>
+        
+        <!-- Modal footer -->
+      
+        
+      </div>
+    </div>
+  </div>
+
+     
+    <div id="commonFooter"></div>
+   
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/commonFooter.js"></script>
+     <script src="assets/js/commonHeader2.js"></script>
+     <script src="assets/js/Properties.js"></script>
+</body>
+
+  <script>
+  
+  var ipAdd=ipAddress();
+	var port=portNo();
+  $("#quotes").click(function(){
+	  window.location.href="allCust.html";
+	}); 
+  $("#calc").click(function(){
+    $("#generateProofModal").modal();
+    
+    
+	}); 
+  $("#calc3").click(function(){
+	  window.location.href="allTx.html";
+  }); 
+  
+  //proofValiditydata
+
+  	$.get("http://"+ipAdd+":"+port+"/getProofValidity", function(response){
+
+
+     //alert(response.validity);
+     var unixtimestamp = response.validity.toString();
+
+if(unixtimestamp=="0"){
+  document.getElementById("proofValiditydata").innerHTML="";
+      document.getElementById("lastGeneratedAt").innerHTML="";
+
+}else{
+      
+				//var unixtimestamp = item.timeStamp;
+				// Months array
+				var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+				// Convert timestamp to milliseconds
+				var date = new Date(unixtimestamp*1000);
+
+				// Year
+				var year = date.getFullYear();
+
+				// Month
+				var month = months_arr[date.getMonth()];
+
+				// Day
+				var day = date.getDate();
+
+				// Hours
+				var hours = date.getHours();
+
+				// Minutes
+				var minutes = "0" + date.getMinutes();
+
+				// Seconds
+				var seconds = "0" + date.getSeconds();
+
+				// Display date time in MM-dd-yyyy h:m:s format
+        var convdataTime = month+'-'+day+'-'+year+' '+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        
+        //alert(convdataTime);
+
+
+
+// Decode current timestamp
+
+
+
+ var unixtimestamp2 = response.currentTimeStamp.toString();
+				//var unixtimestamp = item.timeStamp;
+				// Months array
+
+				// Convert timestamp to milliseconds
+				var date2 = new Date(unixtimestamp2*1000);
+
+				// Year
+				var year2 = date2.getFullYear();
+
+				// Month
+				var month2 = months_arr[date2.getMonth()];
+
+				// Day
+				var day2 = date2.getDate();
+
+				// Hours
+				var hours2 = date2.getHours();
+
+				// Minutes
+				var minutes2 = "0" + date2.getMinutes();
+
+				// Seconds
+				var seconds2 = "0" + date2.getSeconds();
+
+				// Display date time in MM-dd-yyyy h:m:s format
+        var convdataTime2 = month2+'-'+day2+'-'+year2+' '+hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(-2);
+        
+        
+       document.getElementById("proofValiditydata").innerHTML="Latest Proof was created at :"+convdataTime2+" and is valid till :"+convdataTime;
+      document.getElementById("lastGeneratedAt").innerHTML="Last Generated At:"+convdataTime2;
+}
+
+
+
+    });
+
+$("#generateProof").click(function(){
+  var ipAdd=ipAddress();
+	var port=portNo();
+
+  $("#generateProofModal").hide();
+ 
+  
+$.ajax({
+//	localhost:5010/submitCodeData?templateType=Auctionhouse.code&templateCondition=65000
+  dataType:"json",
+  contentType: 'application/json; charset=UTF-8',
+  url: "http://"+ipAdd+":"+port+"/generateProof", //replace api
+  type:"POST",
+  global:false,
+  async:false, 
+  success: function(result){
+//alert(JSON.stringify(result));
+var txData=result.message;
+  document.getElementById("txData").innerHTML=txData;
+  $("#txModal").modal();
+     
+  setTimeout(function(){
+      location.reload();
+  }, 1500);
+}
+});
+});
+  </script>
+
+
+
+
+
+
+</html>

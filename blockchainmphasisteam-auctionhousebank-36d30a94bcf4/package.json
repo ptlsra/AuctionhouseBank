@@ -1,0 +1,26 @@
+{
+  "name": "auctionhousebank",
+  "version": "1.0.0",
+  "description": "AuctionhouseBank Module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://karthikkun@bitbucket.org/blockchainmphasisteam/auctionhousebank.git"
+  },
+  "author": "Mphasis",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/blockchainmphasisteam/auctionhousebank#readme",
+  "devDependencies": {
+    "asyncawait": "^1.0.7",
+    "await-exec": "^0.1.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "log4js": "^3.0.6",
+    "mongodb": "^2.2.19",
+    "web3": "^0.19.0"
+  }
+}
